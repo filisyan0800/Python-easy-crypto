@@ -1,9 +1,5 @@
 # EasyCrypto
 
-[![Build Status](https://travis-ci.org/emartech/python-easy-crypto.svg?branch=master)](https://travis-ci.org/emartech/python-easy-crypto)
-
-Provides simple wrappers around Python [cryptography](https://cryptography.io/en/latest/) module. It is secure by default and compatible with [the easy-crypto node module](https://www.npmjs.com/package/@emartech/easy-crypto).
-
 ## Example usage
 
 ```python
@@ -34,11 +30,3 @@ The library is only a thin wrapper of python's own [cryptography](https://crypto
 2. It slices this data into: _password salt_, _initialization vector_, _ciphertext_.
 3. The _password salt_ and the `password` are used to generate the `256 bit` long encryption key using `pbkdf2` and `10000` as iteration count (same as in encryption process).
 4. The _ciphertext_ is decrypted using `aes-256-gcm` with the generated key and the _initialization vector_. During encryption the integrity of the data is also verified.
-
-## Found a bug? Have a comment?
-
-Please find us, we would love your feedback!
-
-## Release
-
-Tag your commit with x.y.z, then if all tests pass x.y.z version will be released on Pypi.
