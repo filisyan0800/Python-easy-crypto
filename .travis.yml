@@ -1,0 +1,25 @@
+language: python
+
+install: make install-test
+script: make test
+
+jobs:
+  include:
+    - stage: test
+      python: "2.7"
+    - stage:
+      python: "3.6"
+    - stage:
+      python: "3.7-dev"
+    - stage: deploy
+      install: true
+      script: true
+      python: "3.6"
+      deploy:
+        provider: pypi
+        distributions: bdist_egg
+        user: emartech
+        password: $PYPI_PASSWORD
+        on:
+          tags: true
+
