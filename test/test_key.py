@@ -27,3 +27,9 @@ class KeyTest(unittest.TestCase):
             Key.generate_with_salt('weakpassword', salt),
             Key.generate_with_salt('anotherpassword', salt)
         )
+    def test_generate_with_salt_uses_name(self):
+        salt = os.urandom(12)
+        self.assertNotEqual(
+            Key.generate_with_salt('weakpassword', salt),
+            Key.generate_with_salt('anotherpassword', salt)
+        )
