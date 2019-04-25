@@ -11,7 +11,7 @@ class CryptoTest(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             Crypto.decrypt('password', b64encode(os.urandom(40)))
 
-        self.assertEqual('Ciphertext must be at least 41 bytes long.', str(context.exception))
+        self.assertEqual('Ciphertext must be at least 42 bytes long.', str(context.exception))
 
     def test_decrypt_fails_if_wrong_password(self):
         with self.assertRaises(InvalidTag):
