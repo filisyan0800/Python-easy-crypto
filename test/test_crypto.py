@@ -40,7 +40,7 @@ class CryptoTest(unittest.TestCase):
 
     def test_encrypt_returns_different_cipher_with_same_pwd_and_plaintext(self):
         self.assertNotEqual(
-            Crypto.encrypt('pwd', 'secretdata'),
+            Crypto.encrypt('pwd', 'secretdata')
             Crypto.encrypt('pwd', 'secretdata')
         )
 
