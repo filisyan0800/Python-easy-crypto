@@ -28,7 +28,7 @@ class Crypto:
         ciphertext = cls._encrypt_with_key(key, salt, plaintext)
         return b64encode(ciphertext)
 
-    # private
+    # private 
     @classmethod
     def _decrypt_with_key(cls, key, ciphertext):
         aesgcm = AESGCM(key)
